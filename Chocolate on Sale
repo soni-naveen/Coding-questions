@@ -21,3 +21,46 @@ Sample Input
 3 2 1 4
 Sample Output
 3
+
+
+
+//*******************************************  S O L U T I O N  ********************************************************
+
+import java.util.*;
+public class Main {
+
+    static int minCost(int arr[], int k){
+        int n = arr.length;
+        Arrays.sort(arr,0,n);
+
+        int cost=0; 
+        int varities=0;
+
+        for(int j=0; j<n; j++){
+            cost+=arr[j];
+            varities += k+1;
+
+            if(varities>=n) break;
+        }
+        return cost;
+    }
+
+    public static void main (String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while(t>0){
+            int n,k;
+            n = sc.nextInt();
+            k = sc.nextInt();
+
+            int arr[]= new int[n];
+
+            for(int i=0; i<n; i++){
+                arr[i]=sc.nextInt();
+            }
+            System.out.println(minCost(arr,k));
+            t--;
+        }
+    }
+}
