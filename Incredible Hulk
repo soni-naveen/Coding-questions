@@ -1,7 +1,5 @@
 The Planet Earth is under a threat from the aliens of the outer space and the Marvel Avengers team is busy fighting against them. Meanwhile, The Incredible Hulk has to defeat an enemy who is N steps above the level where he is standing (assume it as the 0th level). Hulk, because of his incredible jumping ability can take jumps in power of 2. In order to defeat the enemy as quickly as possible he has to reach the Nth step in minimum moves possible. Help Hulk to find the same and contribute in saving the Mother Earth.
 
-
-
 Input Format
 The first line contains the number of test cases T. T test cases follow: The first line of each test case contains a number N.
 
@@ -23,3 +21,31 @@ Sample Output
 2
 Explanation
 Let total steps is n, find the nearest integer which is of power 2 and less then n. let it would be k. now remaining steps to cover is n-k and result = 1 + min steps for (n-k) remaining steps.
+
+
+//****************************************************************** S O L U T I O N *******************************************************************
+
+import java.util.*;
+public class Main {
+	static int minJumps(int n){
+		int count=0;
+		while(n!=0){
+			if((n&1)==1){
+				count++;
+			}
+			n=n>>1;
+		}
+		return count;
+	}
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		while(t>0){
+			int n = sc.nextInt();
+			System.out.println(minJumps(n));
+			t--;
+		}
+    }
+}
