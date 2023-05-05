@@ -52,3 +52,40 @@ public class Main {
         System.out.print(invert(number));
     }
 }
+
+
+
+METHOD 2 :
+
+import java.util.*;
+public class Main {
+    static long invert(long num){
+        long ans = 0;
+        long mul = 1;
+        while(num>9){
+            long digit = num % 10;
+            long invert = 9-digit;
+            if(invert<digit){
+                ans = ans + invert * mul;
+            }
+            else{
+                ans = ans + digit * mul;
+            }
+            num /= 10;
+            mul *= 10;
+        }
+        if(num != 9){
+            if(num>9-num){
+                num=9-num;
+            }
+        }
+        ans = ans + num * mul;
+        return ans;
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        long number = sc.nextLong();
+
+        System.out.print(invert(number));
+    }
+}
