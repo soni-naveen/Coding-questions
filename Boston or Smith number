@@ -17,3 +17,99 @@ Sample Output
 
 //****************************************** S O L U T I O N **************************************************//
 
+import java.util.*;
+public class Main {
+//Sum of Digits
+    static int sumDigits(int n) {
+        int sumD = 0;
+        while (n>0) {
+            int rem = n%10;
+            sumD += rem;
+            n/=10;
+        }
+        return sumD;
+    }
+//Sum of Prime
+    static int sumPrime(int n) {
+        int sumP = 0;
+        int i=2;
+        while(i<=n){
+            if(n%i==0){
+                sumP += sumDigits(i);
+                n/=i;
+            }
+            else{
+                i++;
+            }
+        }
+        return sumP;
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int x = sumDigits(n);
+        int y = sumPrime(n);
+       
+        if(x==y){
+            System.out.println(1);
+        }
+        else{
+            System.out.println(0);
+        }
+    }
+}
+
+
+
+// import java.util.*;
+// public class Main {
+// //Sum of Digits
+//     static int sumDigits(int n) {
+//         int sumD = 0;
+//         while (n>0) {
+//             int rem = n%10;
+//             sumD += rem;
+//             n/=10;
+//         }
+//         return sumD;
+//     }
+// //Sum of Prime
+//     static int sumPrime(int n) {
+//         int sumP = 0;
+//         int i=2;
+//         while(i<=n){
+//             if(n%i==0){
+//                 if(i>9){
+//                     int j=i;
+//                     while(j>0){
+//                         sumP += j%10;
+//                         j/=10;
+//                     }
+//                 }
+//                 else{
+//                     sumP += i;
+//                 }
+//                 n/=i;
+//             }
+//             else{
+//                 i++;
+//             }
+//         }
+//         return sumP;
+//     }
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = sc.nextInt();
+
+//         int x = sumDigits(n);
+//         int y = sumPrime(n);
+
+//         if(x==y){
+//             System.out.println(1);
+//         }
+//         else{
+//             System.out.println(0);
+//         }
+//     }
+// }
