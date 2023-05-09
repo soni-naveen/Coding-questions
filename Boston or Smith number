@@ -33,7 +33,7 @@ public class Main {
     static int sumPrime(int n) {
         int sumP = 0;
         int i=2;
-        while(i<=n){
+        while(i<=n){    // or while(n>1)
             if(n%i==0){
                 sumP += sumDigits(i);
                 n/=i;
