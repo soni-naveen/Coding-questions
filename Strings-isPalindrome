@@ -49,3 +49,6 @@ public class Main {
 The StringBuilder (or StringBuffer) class has not implemented the equals method, it inherits the version defined in the Object class. The equals method of the Object class compares the object references, not the content.
 So if you want to compare two StringBuilder object contents, comparing them with each other using the equals method does not work.
 Contents of both of the StringBuilder objects are the same, the equals method returned false. The reason is, they both refer to different objects.
+
+❌original.equal(str);
+✔️original.toString().equals(str.toString())
