@@ -1,0 +1,51 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int l = str.length();
+
+        int flag = 0;
+        for(int i=0,j=l-1; i<l && j>=0; i++, j--){
+            if(str.charAt(i) != str.charAt(j)){
+                System.out.println(false);
+                flag = 1;
+                break;
+            }
+        }
+        if(flag==0){
+            System.out.println(true);
+        }
+    }
+}
+
+
+//////////////// BY STRINGBUILDER METHOD ////////////////////
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder str = new StringBuilder(sc.next());
+        StringBuilder original = new StringBuilder(str);
+        int l = str.length();
+
+        for(int i=0; i<l/2; i++){
+            int stInd = i;
+            int endInd = l-i-1;
+
+            char stChar = str.charAt(stInd);
+            char endChar = str.charAt(endInd);
+
+            str.setCharAt(stInd,endChar);
+            str.setCharAt(endInd,stChar);
+        }
+        System.out.println(original.toString().equals(str.toString()));
+    }
+}
+
+
+************************************* I M P O R T A N T **********************************************
+The StringBuilder (or StringBuffer) class has not implemented the equals method, it inherits the version defined in the Object class. The equals method of the Object class compares the object references, not the content.
+So if you want to compare two StringBuilder object contents, comparing them with each other using the equals method does not work.
+Contents of both of the StringBuilder objects are the same, the equals method returned false. The reason is, they both refer to different objects.
