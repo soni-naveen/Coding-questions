@@ -31,8 +31,8 @@ public class Main {
 
         int count = 0;
         int max = 0;
-        for(int i=0; i<str.length()-1; i++){
-            char vow = str.charAt(i+1);
+        for(int i=0; i<str.length(); i++){
+            char vow = str.charAt(i);
             if(vow=='a' || vow=='e' || vow=='i' || vow=='o' || vow=='u'){
                 count++;
                 if(count>max){
