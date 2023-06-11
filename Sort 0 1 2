@@ -9,7 +9,7 @@ Sample Output 1:
 
 void sort012(int *arr, int n)
 {
-    int next_two=n-1,next_zero=0,i =0; 
+    int next_two=n-1,next_zero=0,i=0; 
     while(i<=next_two){ 
         if (arr[i]==0){ 
             int temp=arr[next_zero]; 
