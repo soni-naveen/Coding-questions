@@ -1,0 +1,60 @@
+Input: ‘N’ = 4
+
+Output: 
+
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+
+
+========================= SOLUTION =========================
+https://youtu.be/tNm_NNSB3_w?t=4541
+
+public class Solution {
+    public static void getNumberPattern(int n) {
+        for(int i=0; i<2*n-1; i++){
+            for(int j=0; j<2*n-1; j++){
+                int top = i;
+                int down = 2*n-2-i;
+                int left = j;
+                int right = 2*n-2-j;
+
+                System.out.print(n-Math.min(Math.min(top,down), Math.min(left,right)));
+            }
+            System.out.println();
+        }
+    }
+}
+
+// public class Solution {
+//     public static void getNumberPattern(int n) {
+//         for(int i=0; i<n; i++){
+//             for(int j=0; j<i; j++){
+//                 System.out.print(n-j + "");
+//             }
+//             for(int j=0; j<2*(n-i)-1; j++){
+//                 System.out.print(n-i);
+//             }
+//             for(int j=i; j>0; j--){
+//                 System.out.print(n-j+1 + "");
+//             }
+//             System.out.println();
+//         }
+//         for(int i=n-1; i>0; i--){
+//              for(int j=0; j<i-1; j++){
+//                 System.out.print(n-j + "");
+//             }
+//             for(int j=0; j<2*(n-i)+1; j++){
+//                 System.out.print(n-i+1);
+//             }
+//             for(int j=i-1; j>0; j--){
+//                 System.out.print(n-j+1 + "");
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
